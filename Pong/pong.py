@@ -105,14 +105,14 @@ while True:
     if ball.xcor() > 360:
         ball.goto(0, 0)
         ball.dx *= -1
-        if score_a < 2:
+        if score_a < 6:
             score_a += 1
             pen.clear()
             pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
             winsound.PlaySound("point_a.wav", winsound.SND_ASYNC)
             os.system("aplay point_a.wav&")
 
-        elif score_a >= 2:
+        elif score_a >= 6:
             pen.clear()
             turtle.clearscreen()
             winsound.PlaySound("win_a.wav", winsound.SND_ASYNC)
@@ -125,13 +125,13 @@ while True:
     if ball.xcor() < -360:
         ball.goto(0, 0)
         ball.dx *= -1
-        if score_b < 2:
+        if score_b < 6:
             score_b += 1
             pen.clear()
             pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
             winsound.PlaySound("point_b.wav", winsound.SND_ASYNC)
             os.system("aplay point_b.wav&")
-        elif score_b >= 2:
+        elif score_b >= 6:
             pen.clear()
             turtle.clearscreen()
             winsound.PlaySound("win_b.wav", winsound.SND_ASYNC)
