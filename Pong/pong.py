@@ -1,7 +1,7 @@
 ## Simple Pong in Python3 
 import turtle
 import os
-import winsound
+
 wn = turtle.Screen()
 wn.title("Pong by me")
 wn.bgcolor("black")
@@ -93,13 +93,11 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         os.system("aplay bounce.wav&")
 
     elif ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         os.system("aplay bounce.wav&")
     
     if ball.xcor() > 360:
@@ -109,13 +107,11 @@ while True:
             score_a += 1
             pen.clear()
             pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
-            winsound.PlaySound("point_a.wav", winsound.SND_ASYNC)
             os.system("aplay point_a.wav&")
 
         elif score_a >= 6:
             pen.clear()
             turtle.clearscreen()
-            winsound.PlaySound("win_a.wav", winsound.SND_ASYNC)
             os.system("aplay win_a.wav&")
             wn.bgcolor("black")
             pen.goto(0,0)
@@ -129,12 +125,10 @@ while True:
             score_b += 1
             pen.clear()
             pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 20, "normal"))
-            winsound.PlaySound("point_b.wav", winsound.SND_ASYNC)
             os.system("aplay point_b.wav&")
         elif score_b >= 6:
             pen.clear()
             turtle.clearscreen()
-            winsound.PlaySound("win_b.wav", winsound.SND_ASYNC)
             os.system("aplay win_b.wav&")
             wn.bgcolor("black")
             pen.goto(0,0)
@@ -148,13 +142,11 @@ while True:
  ## Paddle A
     if ball.xcor() < -340 and ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50:
         ball.dx *= -1 
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         os.system("aplay bounce.wav&")
 
     ## Paddle B
     elif ball.xcor() > 340 and ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50:
         ball.dx *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         os.system("aplay bounce.wav&")
 
    
